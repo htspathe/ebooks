@@ -7,7 +7,7 @@ from PIL import Image, ImageStat
 def audit(project):
     project=Path(project)
     cfg=json.loads((project/"book.json").read_text(encoding="utf-8"))
-    rows=list(csv.DictReader((project/"manifest.csv").open(encoding="utf-8-sig",newline="",encoding_errors="replace")))
+    rows=list(csv.DictReader((project/"manifest.csv").open(encoding="utf-8-sig",newline="",errors="replace")))
     expected=int(cfg["artwork_count"])
     results=[]
     problems=[]
