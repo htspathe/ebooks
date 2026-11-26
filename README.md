@@ -6,6 +6,11 @@ Dépôt central pour produire, vérifier et publier des livres Amazon KDP.
 - `books/halloween-2026/` : *Cute Halloween Coloring Book*, 40 illustrations prévues, format 8.5 × 11 pouces, noir et blanc, sans fond perdu.
 - Actuellement, le projet reste **NON PUBLIABLE** tant que les 40 illustrations, la résolution et la revue éditoriale ne sont pas validées.
 
+## Deuxième collection
+- `books/road-trip-activity-6-10/` : *Road Trip Activity Book for Kids Ages 6–10*, plan de 80 pages dont 4 pages liminaires et 76 pages d'activités. Les six fichiers éditoriaux et de contrôle ont été transférés depuis Production OS.
+- **Statut :** plan enregistré, aucun puzzle, PDF ni illustration finale encore produit ; non prêt à publier.
+
+
 ## Workflow
 1. Ajouter les illustrations individuelles dans `books/halloween-2026/assets/originals/page_XX.png`.
 2. Mettre à jour `manifest.csv` et `book.json`.
