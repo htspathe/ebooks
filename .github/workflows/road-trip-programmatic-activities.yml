@@ -1,0 +1,31 @@
+name: Road Trip Programmatic Activities
+on:
+  push:
+    branches:
+      - kdp/road-trip-programmatic-activities-v1
+    paths:
+      - 'books/road-trip-activity-6-10/production/programmatic_activities/**'
+      - '.github/workflows/road-trip-programmatic-activities.yml'
+  pull_request:
+    paths:
+      - 'books/road-trip-activity-6-10/production/programmatic_activities/**'
+      - '.github/workflows/road-trip-programmatic-activities.yml'
+jobs:
+  generate-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run deterministic generator tests
+        working-directory: books/road-trip-activity-6-10/production/programmatic_activities
+        run: python -m unittest -v
+      - name: Generate SVG activity pages
+        working-directory: books/road-trip-activity-6-10/production/programmatic_activities
+        run: python generate_activities.py --output-dir generated_activities
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: road-trip-programmatic-activities
+          path: books/road-trip-activity-6-10/production/programmatic_activities/generated_activities/
