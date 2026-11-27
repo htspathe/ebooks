@@ -107,14 +107,14 @@ try {
 
     $readmePath = Join-Path $destination "README.md"
     $readme = Get-Content -LiteralPath $readmePath -Raw -Encoding UTF8
-    $newStatus = "- **Statut :** 48 activités programmatiques générées (pages 15–54 et 73–80) ; bibliothèque d’illustrations intégrée (58 images approuvées, 34 originaux et 2 rejets archivés). La mise en page finale, la revue visuelle et le PDF KDP de 80 pages restent à terminer."
+    $newStatus = "- **Statut :** 48 activites programmatiques generees (pages 15-54 et 73-80) ; bibliotheque d'illustrations integree (58 images approuvees, 34 originaux et 2 rejets archives). La mise en page finale, la revue visuelle et le PDF KDP de 80 pages restent a terminer."
     $readme = [regex]::Replace($readme, '(?m)^- \*\*Statut :\*\*.*$', $newStatus)
-    if ($readme -notmatch '## Bibliothèque d’illustrations') {
+    if ($readme -notmatch "## Bibliotheque d'illustrations") {
         $readme += @"
 
-## Bibliothèque d’illustrations
+## Bibliotheque d'illustrations
 
-La bibliothèque complète est conservée dans art_bible/, assets/originals/, assets/approved/, assets/rejected/, production/ et reports/. Pour la mise en page finale, utiliser exclusivement assets/approved/. Les 58 PNG approuvés ont été comparés par SHA-256 à l’archive IMAGES_APPROVED_ONLY ; les 58 correspondances sont exactes. Les originaux et les rejets restent archivés pour la traçabilité, pas pour l’intérieur final.
+La bibliotheque complete est conservee dans art_bible/, assets/originals/, assets/approved/, assets/rejected/, production/ et reports/. Pour la mise en page finale, utiliser exclusivement assets/approved/. Les 58 PNG approuves ont ete compares par SHA-256 a l'archive IMAGES_APPROVED_ONLY ; les 58 correspondances sont exactes. Les originaux et les rejets restent archives pour la tracabilite, pas pour l'interieur final.
 "@
     }
     Set-Content -LiteralPath $readmePath -Value $readme -Encoding UTF8
