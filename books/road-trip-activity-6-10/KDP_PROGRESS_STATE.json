@@ -15,7 +15,7 @@
     "page_count": 80
   },
   "target_list_price_usd": 9.99,
-  "status": "PLAN_APPROVED_FOR_PRODUCTION",
+  "status": "PROGRAMMATIC_ACTIVITIES_GENERATED_NEEDS_VISUAL_REVIEW",
   "generated_content": false,
   "pages_total": 80,
   "pages_planned": 80,
@@ -88,5 +88,19 @@
     "verified": false,
     "notes": "Estimates supplied in the project brief; recalculate with the current KDP calculator."
   },
-  "next_step": "Create a reference library and editorial bible, then generate a 10-page representative pilot batch before producing the remaining pages."
+  "next_step": "Visually review all 48 generated SVG activity pages, integrate the original illustration library, then assemble and validate the 80-page interior PDF.",
+  "programmatic_activities": {
+    "status": "GENERATED_NEEDS_VISUAL_REVIEW",
+    "pages_generated": 48,
+    "page_ranges": [
+      "15-54",
+      "73-80"
+    ],
+    "generator_path": "production/programmatic_activities/generate_activities.py",
+    "generated_output_path": "production/programmatic_activities/generated_activities/",
+    "answer_keys_path": "production/programmatic_activities/generated_activities/answer_keys/",
+    "unit_tests": "PASSED",
+    "visual_review": "PENDING",
+    "pdf_assembly": "NOT_STARTED"
+  }
 }
