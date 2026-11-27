@@ -53,6 +53,7 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 $full = [System.IO.Compression.ZipFile]::OpenRead($LibraryZip)
 $approved = [System.IO.Compression.ZipFile]::OpenRead($ApprovedOnlyZip)
 $temp = Join-Path ([System.IO.Path]::GetTempPath()) ("roadtrip-illustrations-" + [guid]::NewGuid().ToString("N"))
+New-Item -ItemType Directory -Path $temp -Force | Out-Null
 
 try {
     Assert-SafeArchive $full $BookPrefix
