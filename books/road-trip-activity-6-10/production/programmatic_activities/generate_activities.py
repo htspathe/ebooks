@@ -24,7 +24,7 @@ MAZES = [
  (29,10,"Help the family reach the ferry terminal"),(30,10,"Navigate the mountain road to the lookout"),
 ]
 DOTS = [
- (31,"Car",30,[(8,58),(18,58),(23,42),(38,32),(66,32),(79,45),(92,48),(94,65),(86,69),(80,82),(68,82),(62,70),(36,70),(30,82),(18,82),(13,70),(8,68)]),
+ (31,"Car",30,[(8,68),(8,50),(17,50),(24,40),(31,31),(66,31),(74,38),(82,48),(94,51),(94,68),(88,68),(86,78),(80,84),(73,84),(67,78),(65,68),(35,68),(33,78),(27,84),(20,84),(14,78),(12,68)]),
  (32,"Airplane",30,[(50,5),(57,35),(91,49),(91,57),(58,54),(57,82),(70,91),(70,96),(50,91),(30,96),(30,91),(43,82),(42,54),(9,57),(9,49),(43,35)]),
  (33,"Palm tree",30,[(49,94),(53,72),(48,51),(35,38),(18,32),(28,20),(45,27),(39,8),(52,20),(62,5),(61,28),(82,15),(72,35),(91,39),(68,47),(56,56),(60,94)]),
  (34,"Suitcase",30,[(25,25),(38,25),(40,12),(62,12),(64,25),(78,25),(83,32),(83,83),(76,90),(24,90),(17,83),(17,32),(25,25)]),
@@ -184,7 +184,7 @@ def word_svg(title,words,grid):
     listed=[]
     for i,w in enumerate(words):
         col,row=i//5,i%5; x=180+col*280; y=850+row*35
-        listed.append(f'<text x="{x}" y="{y}" font-family="Arial" font-size="19">□  {w}</text>')
+        listed.append(f'<rect x="{x}" y="{y-17}" width="15" height="15" fill="none" stroke="#000" stroke-width="1.7"/><text x="{x+25}" y="{y}" font-family="Arial" font-size="19">{w}</text>')
     body=f'<g fill="none" stroke="#000" stroke-width="2">{"".join(lines)}</g><g fill="#000">{"".join(letters)}{"".join(listed)}</g>'
     return page_svg(f"Word Search: {title}","Find and circle all the hidden words.",body)
 
@@ -206,8 +206,10 @@ def game_svg(title,instruction,items,kind):
             y=310+i*220; out.append(f'<text x="130" y="{y}" font-family="Arial" font-size="24" font-weight="700">{item}</text>')
             for j in range(count):
                 x=150+j*72
-                if item in ("CARS","TRUCKS"):
+                if item == "CARS":
                     out.append(f'<g transform="translate({x},{y+25})"><rect x="0" y="0" width="42" height="20" rx="5" fill="none" stroke="#000" stroke-width="2.5"/><path d="M8 0l7 -10h15l8 10" fill="none" stroke="#000" stroke-width="2.5"/><circle cx="10" cy="22" r="5" fill="#fff" stroke="#000" stroke-width="2"/><circle cx="34" cy="22" r="5" fill="#fff" stroke="#000" stroke-width="2"/></g>')
+                elif item == "TRUCKS":
+                    out.append(f'<g transform="translate({x},{y+25})"><rect x="0" y="0" width="27" height="23" fill="none" stroke="#000" stroke-width="2.5"/><path d="M27 7h11l9 9v7H27Z" fill="none" stroke="#000" stroke-width="2.5"/><circle cx="10" cy="25" r="5" fill="#fff" stroke="#000" stroke-width="2"/><circle cx="38" cy="25" r="5" fill="#fff" stroke="#000" stroke-width="2"/></g>')
                 elif item=="ROAD SIGNS":
                     out.append(f'<g transform="translate({x+8},{y+10})"><path d="M15 0L30 15L15 30L0 15Z" fill="none" stroke="#000" stroke-width="2.5"/><path d="M15 30v22" stroke="#000" stroke-width="3"/></g>')
                 elif item=="CLOUDS":
