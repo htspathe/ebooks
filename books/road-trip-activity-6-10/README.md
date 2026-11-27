@@ -7,7 +7,7 @@ Premier livre pilote de la KDP Factory de Production OS.
 - **Marché :** Amazon.com (à confirmer)
 - **Format :** broché, 8.5 × 11 pouces, intérieur noir et blanc
 - **Longueur :** exactement 80 pages, pages de début incluses
-- **Statut :** plan page par page enregistré ; aucune activité ni illustration finale n'a encore été produite.
+- **Statut :** plan enregistré ; 48 activités programmatiques (pages 15–54 et 73–80) générées en SVG avec corrigés et contrôles algorithmiques. Leur revue visuelle reste à faire. Les illustrations de coloriage et les paires « cherche les différences » ne sont pas encore intégrées ; le PDF final de 80 pages n'est pas assemblé.
 
 ## Fichiers de référence
 
@@ -30,3 +30,7 @@ PAGE_PLAN.md et PAGE_MANIFEST.csv définissent ensemble la pagination officielle
 5. Assemblage de l'intérieur et de la couverture.
 6. Contrôles automatisés, inspection visuelle et correction.
 7. Préparation d'un dossier KDP ; soumission manuelle uniquement.
+
+## Production programmatique
+
+Le moteur et ses 48 pages SVG générées se trouvent dans `production/programmatic_activities/`. Les corrigés et le rapport de validation sont dans `generated_activities/answer_keys/` et `generated_activities/VALIDATION_REPORT.json`. Le statut reste `GENERATED_NEEDS_VISUAL_REVIEW` jusqu'à inspection humaine de toutes les pages.

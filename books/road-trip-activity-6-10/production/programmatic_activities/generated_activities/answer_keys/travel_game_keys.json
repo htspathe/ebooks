@@ -1,0 +1,126 @@
+{
+  "73": {
+    "type": "letters",
+    "items": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M"
+    ]
+  },
+  "74": {
+    "type": "letters",
+    "items": [
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ]
+  },
+  "75": {
+    "type": "checklist",
+    "items": [
+      "CAR",
+      "TRUCK",
+      "TRAFFIC LIGHT",
+      "ROAD SIGN",
+      "BRIDGE",
+      "TREE",
+      "CLOUD",
+      "BIRD",
+      "BICYCLE",
+      "GAS STATION"
+    ]
+  },
+  "76": {
+    "type": "checklist",
+    "items": [
+      "AIRPLANE",
+      "BUS",
+      "DOG",
+      "MOUNTAIN",
+      "RIVER",
+      "CAMPER",
+      "TRAIN",
+      "BOAT",
+      "TUNNEL",
+      "HOTEL"
+    ]
+  },
+  "77": {
+    "type": "count_a",
+    "answers": {
+      "CARS": 4,
+      "ROAD SIGNS": 6,
+      "TRUCKS": 3
+    }
+  },
+  "78": {
+    "type": "count_b",
+    "answers": {
+      "CLOUDS": 5,
+      "TREES": 7,
+      "BIRDS": 4
+    }
+  },
+  "79": {
+    "type": "bingo",
+    "squares": [
+      "CAR",
+      "TRUCK",
+      "BRIDGE",
+      "TREE",
+      "BUS",
+      "CLOUD",
+      "ROAD SIGN",
+      "BICYCLE",
+      "BIRD",
+      "TUNNEL",
+      "RIVER",
+      "CAMPER",
+      "AIRPLANE",
+      "GAS STATION",
+      "MOTORBIKE",
+      "TRAIN"
+    ]
+  },
+  "80": {
+    "type": "bingo",
+    "squares": [
+      "BOAT",
+      "FERRY",
+      "MOUNTAIN",
+      "DOG",
+      "HOTEL",
+      "CAMPFIRE",
+      "MAP",
+      "SUITCASE",
+      "BEACH",
+      "PALM TREE",
+      "TRAFFIC LIGHT",
+      "PICNIC",
+      "TRAIN",
+      "AIRPLANE",
+      "WATERFALL",
+      "TOLL BOOTH"
+    ]
+  }
+}
