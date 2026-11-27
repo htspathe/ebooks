@@ -126,12 +126,18 @@ La bibliotheque complete est conservee dans art_bible/, assets/originals/, asset
         "$BookFolder/production/DIFFERENCE_LEDGER.csv",
         "$BookFolder/production/GENERATION_LOG.md",
         "$BookFolder/production/ILLUSTRATION_LIBRARY_AUDIT.md",
-        "$BookFolder/reports",
         "$BookFolder/KDP_PROGRESS_STATE.json",
         "$BookFolder/README.md"
     )
+    # The repository-wide ignore rule "reports/" also matches this book's
+    # reports directory. Stage the explicitly intended book reports only with -f.
     git add -- $paths
-    Assert-CommandSuccess "Git staging failed"
+    Assert-CommandSuccess "Git staging failed for book assets and metadata"
+    $bookReports = "$BookFolder/reports"
+    if (Test-Path -LiteralPath $bookReports) {
+        git add -f -- $bookReports
+        Assert-CommandSuccess "Git staging failed for the book reports directory"
+    }
     git diff --cached --quiet
     if ($LASTEXITCODE -eq 0) { throw "No changes staged. The illustration library may already be imported." }
     git commit -m "kdp: import verified Road Trip illustration library"
